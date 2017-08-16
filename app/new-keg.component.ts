@@ -14,7 +14,7 @@ import { Keg } from './keg.model';
     <input #newFlavor>
     <label>Price: </label>
     <input #newPrice>
-    <button>Add Keg</button>
+    <button (click)="submitForm(newName.value, newBrand.value, newFlavor.value, newPrice.value); newName.value=''; newBrand.value=''; newFlavor.value=''; newPrice.value='';">Add Keg</button>
   </div>
   `
 })
