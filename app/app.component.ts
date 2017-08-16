@@ -6,6 +6,7 @@ import { Keg } from './keg.model';
   template: `
   <div class="container">
     <h1>Effervesence Kombucha</h1>
+    <keg-list [childKegList] = "masterKegList"></keg-list>
   </div>
   `
 })
