@@ -2,17 +2,17 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { Keg } from './keg.model';
 
 @Component({
-  selector: 'new-task',
+  selector: 'new-keg',
   template: `
   <h2>Add New Keg</h2>
   <div>
     <label>Name: </label>
     <input #newName>
-    <label>Name: </label>
+    <label>Brand: </label>
     <input #newBrand>
-    <label>Name: </label>
+    <label>Flavor: </label>
     <input #newFlavor>
-    <label>Name: </label>
+    <label>Price: </label>
     <input #newPrice>
     <button>Add Keg</button>
   </div>
