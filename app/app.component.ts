@@ -11,5 +11,9 @@ import { Keg } from './keg.model';
 })
 
 export class AppComponent {
-
+  masterKegList: Keg[] = [
+    new Keg("Goddess Blend", "Eva's Herbucha", 275.00, "pomegranate");
+    new Keg("Gingerade", "GT's Enlightened Synergy", 300.00, "lemon ginger");
+    new Keg("Superfruit", "Acai Fusion", 300.00, "acai berry");
+  ]
 }
