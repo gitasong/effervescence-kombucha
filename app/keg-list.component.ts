@@ -7,10 +7,10 @@ import { Keg } from './keg.model';
   <h2>List of Kegs Available</h2>
   <ul>
     <li *ngFor="let currentKeg of childKegList">
-      <h3>{{currentKeg.name}}</h3>
-      <p><em>{{currentKeg.brand}}</em></p>
-      <p>{{currentKeg.flavor}}</p>
-      <h4>\${{currentKeg.price.toFixed(2)}}</h4>
+      <h3><strong>Name:</strong> {{currentKeg.name}}</h3>
+      <p><strong>Brand:</strong> <em>{{currentKeg.brand}}</em></p>
+      <p><strong>Flavor:</strong> {{currentKeg.flavor}}</p>
+      <h4><strong>Price:</strong> \${{currentKeg.price.toFixed(2)}}</h4>
     </li>
   </ul>
   `
