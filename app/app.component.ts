@@ -16,5 +16,5 @@ export class AppComponent {
     new Keg("Goddess Blend", "Eva's Herbucha", "pomegranate", 275.00),
     new Keg("Gingerade", "GT's Enlightened Synergy", "lemon ginger", 350.00),
     new Keg("Superfruit", "Acai Fusion", "acai berry", 300.00),
-  ]
+  ];
 }
