@@ -18,4 +18,8 @@ export class AppComponent {
     new Keg("Gingerade", "GT's Enlightened Synergy", "lemon ginger", 350.00),
     new Keg("Superfruit", "Acai Fusion", "acai berry", 300.00),
   ];
+
+  addKeg(newKegFromChild: Keg) {
+    this.masterKegList.push(newKegFromChild);
+  }
 }
