@@ -10,7 +10,7 @@ import { Keg } from './keg.model';
       <h3>{{currentKeg.name}}</h3>
       <p><em>{{currentKeg.brand}}</em></p>
       <p>{{currentKeg.flavor}}</p>
-      <h4>{{currentKeg.price}}</h4>
+      <h4>\${{currentKeg.price.toFixed(2)}}</h4>
     </li>
   </ul>
   `
