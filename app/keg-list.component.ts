@@ -19,4 +19,8 @@ import { Keg } from './keg.model';
 
 export class KegListComponent {
   @Input() childKegList: Keg[];
+
+  editButtonHasBeenClicked(kegToEdit: Task) {
+    this.clickSender.emit(kegToEdit);
+  }
 }
