@@ -22,8 +22,13 @@ import { Keg } from './keg.model';
 export class KegListComponent {
   @Input() childKegList: Keg[];
   @Output() clickSender = new EventEmitter();
+  @Output() clickSell = new EventEmitter();
 
   editButtonHasBeenClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
+  }
+
+  sellButtonHasBeenClicked(kegToSell: Keg) {
+    this.clickSell.emit(kegToSell);
   }
 }
