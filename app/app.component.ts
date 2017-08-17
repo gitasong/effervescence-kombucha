@@ -8,7 +8,7 @@ import { Keg } from './keg.model';
     <h1>Effervesence Kombucha</h1>
     <keg-list [childKegList]="masterKegList"></keg-list>
     <new-keg (newKegSender)="addKeg($event)"></new-keg>
-    <edit-keg [selectedKeg]="selectedKeg"></edit-keg>
+    <edit-keg [selectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
   </div>
   `
 })
