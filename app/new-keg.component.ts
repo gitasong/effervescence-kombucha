@@ -23,7 +23,7 @@ export class NewKegComponent {
   @Output() newKegSender = new EventEmitter();
 
   submitForm(name: string, brand: string, flavor: string, price: number) {
-    var newKegToAdd: Keg = new Keg(name, brand, flavor, price);
+    var newKegToAdd: Keg = new Keg(name, brand, flavor, parseInt(price));
     this.newKegSender.emit(newKegToAdd);
   }
 }
