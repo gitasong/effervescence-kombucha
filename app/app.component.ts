@@ -17,11 +17,11 @@ export class AppComponent {
   selectedKeg: null;
 
   masterKegList: Keg[] = [
-    new Keg("Goddess Blend", "Eva's Herbucha", "pomegranate", 275.00),
-    new Keg("Gingerade", "GT's Enlightened Synergy", "lemon ginger", 350.00),
-    new Keg("Superfruit", "Acai Fusion", "acai berry", 300.00),
-    new Keg("Tropical Ambrosia", "Kevita", "pineapple peach", 350.00),
-    new Keg("Passion Explosion", "Soma", "passionfruit mango", 275.00),
+    new Keg("Goddess Blend", "Eva's Herbucha", "pomegranate", 4.00),
+    new Keg("Gingerade", "GT's Enlightened Synergy", "lemon ginger", 3.50),
+    new Keg("Superfruit", "Acai Fusion", "acai berry", 4.25),
+    new Keg("Tropical Ambrosia", "Kevita", "pineapple peach", 4.00),
+    new Keg("Passion Explosion", "Soma", "passionfruit mango", 3.75),
   ];
 
   addKeg(newKegFromChild: Keg) {
