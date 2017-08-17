@@ -41,4 +41,10 @@ export class AppComponent {
     console.log(clickedKeg.pints);
     return clickedKeg;
   }
+
+  sellGrowler(clickedKeg) {
+    clickedKeg.pints -= 2;
+    console.log(clickedKeg.pints);
+    return clickedKeg;
+  }
 }
