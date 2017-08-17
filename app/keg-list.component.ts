@@ -10,6 +10,7 @@ import { Keg } from './keg.model';
       <h3><strong>Name:</strong> {{currentKeg.name}}</h3>
       <p><strong>Brand:</strong> <em>{{currentKeg.brand}}</em></p>
       <p><strong>Flavor:</strong> {{currentKeg.flavor}}</p>
+      <p><strong>Pints Remaining:</strong> {{currentKeg.pints}}</p>
       <h4><strong>Price:</strong> \${{currentKeg.price.toFixed(2)}}</h4>
       <button (click)="editButtonHasBeenClicked(currentKeg)">Edit!</button>
     </li>
