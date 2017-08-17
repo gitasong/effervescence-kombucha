@@ -6,7 +6,7 @@ import { Keg } from './keg.model';
   template: `
   <div class="container">
     <h1>Effervesence Kombucha</h1>
-    <keg-list [childKegList]="masterKegList"></keg-list>
+    <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></keg-list>
     <new-keg (newKegSender)="addKeg($event)"></new-keg>
     <edit-keg [selectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
   </div>
@@ -15,7 +15,7 @@ import { Keg } from './keg.model';
 
 export class AppComponent {
   selectedKeg: null;
-  
+
   masterKegList: Keg[] = [
     new Keg("Goddess Blend", "Eva's Herbucha", "pomegranate", 275.00),
     new Keg("Gingerade", "GT's Enlightened Synergy", "lemon ginger", 350.00),
