@@ -34,6 +34,10 @@ export class KegListComponent {
 
   filterByFullness: string = "fullKegs";
 
+  onChange(optionFromMenu) {
+    this.filterByFullness = optionFromMenu;
+  }
+
   editButtonHasBeenClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
   }
