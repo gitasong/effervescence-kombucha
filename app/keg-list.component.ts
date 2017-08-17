@@ -7,9 +7,9 @@ import { Keg } from './keg.model';
   <h2>List of Kegs Available</h2>
   <label>Filter By: </label>
   <select (change)="onChange($event.target.value)">
-    <option value="allKegs">All Kegs</option>
+    <option value="allKegs" selected="selected">All Kegs</option>
     <option value="lowKegs">Kegs < 10 pints</option>
-    <option value="fullKegs" selected="selected">Kegs >= 10 pints</option>
+    <option value="fullKegs">Kegs >= 10 pints</option>
   </select>
 
   <ul>
@@ -32,7 +32,7 @@ export class KegListComponent {
   @Output() clickSender = new EventEmitter();
   @Output() clickSell = new EventEmitter();
 
-  filterByFullness: string = "fullKegs";
+  filterByFullness: string = "allKegs";
 
   onChange(optionFromMenu) {
     this.filterByFullness = optionFromMenu;
