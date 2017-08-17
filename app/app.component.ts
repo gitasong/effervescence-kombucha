@@ -6,7 +6,7 @@ import { Keg } from './keg.model';
   template: `
   <div class="container">
     <h1>Effervesence Kombucha</h1>
-    <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickSell)="sellPint($event)" (clickGrowler)="sellGrowler($event)" [clickedKeg]="clickedKeg"></keg-list>
+    <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickSell)="sellPint($event)" (clickGrowler)="sellGrowler($event)" (clickLarge)="sellLarge($event)" [clickedKeg]="clickedKeg"></keg-list>
     <new-keg (newKegSender)="addKeg($event)"></new-keg>
     <edit-keg [selectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
   </div>
@@ -44,6 +44,12 @@ export class AppComponent {
 
   sellGrowler(clickedKeg) {
     clickedKeg.pints -= 2;
+    console.log(clickedKeg.pints);
+    return clickedKeg;
+  }
+
+  sellLarge(clickedKeg) {
+    clickedKeg.pints -= 4;
     console.log(clickedKeg.pints);
     return clickedKeg;
   }
