@@ -21,10 +21,11 @@ import { Keg } from './keg.model';
       <h4><strong>Price:</strong> \${{currentKeg.price.toFixed(2)}}</h4>
       <button (click)="editButtonHasBeenClicked(currentKeg)">Edit!</button>
 
-      <select (change)="onChange($event.target.value)">
-        <option value="pint" (click)="sellButtonHasBeenClicked(currentKeg)" selected="selected">Sell Pint (16 oz.)</option>
-        <option value="growler" (click)="sellGrowlerHasBeenClicked(currentKeg)">Sell Growler (32 oz.)</option>
-        <option value="largeGrowler" (click)="sellLargeHasBeenClicked(currentKeg)">Sell Large Growler (64 oz.)</option>
+      <select (change)="onSizeChange(currentKeg, $event.target.value)">
+        <option selected="selected">Select A Size</option>
+        <option value="pint">Sell Pint (16 oz.)</option>
+        <option value="growler">Sell Growler (32 oz.)</option>
+        <option value="largeGrowler">Sell Large Growler (64 oz.)</option>
       </select>
     </li>
   </ul>
@@ -36,8 +37,6 @@ export class KegListComponent {
   @Input() clickedKeg: Keg;
   @Output() clickSender = new EventEmitter();
   @Output() clickSell = new EventEmitter();
-  @Output() clickGrowler = new EventEmitter();
-  @Output() clickLarge = new EventEmitter();
 
   filterByFullness: string = "allKegs";
 
@@ -45,20 +44,12 @@ export class KegListComponent {
     this.filterByFullness = optionFromMenu;
   }
 
+  onSizeChange(currentKeg, optionFromMenu) {
+    this.clickSell.emit([currentKeg, optionFromMenu]);
+  }
+
   editButtonHasBeenClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
-  }
-
-  sellButtonHasBeenClicked(kegToSell: Keg) {
-    this.clickSell.emit(kegToSell);
-  }
-
-  sellGrowlerHasBeenClicked(kegToSell: Keg) {
-    this.clickGrowler.emit(kegToSell);
-  }
-
-  sellLargeHasBeenClicked(kegToSell: Keg) {
-    this.clickLarge.emit(kegToSell);
   }
 
   priceColor(currentKeg){
