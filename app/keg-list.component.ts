@@ -5,6 +5,13 @@ import { Keg } from './keg.model';
   selector: 'keg-list',
   template: `
   <h2>List of Kegs Available</h2>
+  <label>Filter By: </label>
+  <select (change)="onChange($event.target.value)">
+    <option value="allKegs">All Kegs</option>
+    <option value="lowKegs">Kegs < 10 pints</option>
+    <option value="fullKegs" selected="selected">Kegs >= 10 pints</option>
+  </select>
+
   <ul>
     <li *ngFor="let currentKeg of childKegList">
       <h3><strong>Name:</strong> {{currentKeg.name}}</h3>
