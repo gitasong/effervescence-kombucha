@@ -33,4 +33,10 @@ export class AppComponent {
   finishedEditing() {
     this.selectedKeg = null;
   }
+
+  sellPint(clickedKeg) {
+    var newPints = clickedKeg.pints --;
+    console.log(newPints);
+    return newPints;
+  }
 }
