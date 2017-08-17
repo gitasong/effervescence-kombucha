@@ -13,7 +13,7 @@ import { Keg } from './keg.model';
   </select>
 
   <ul>
-    <li *ngFor="let currentKeg of childKegList | fullness:filterByFullness" [class]="priceColor(currentTask)">
+    <li *ngFor="let currentKeg of childKegList | fullness:filterByFullness" [class]="priceColor(currentKeg)">
       <h3><strong>Name:</strong> {{currentKeg.name}}</h3>
       <p><strong>Brand:</strong> <em>{{currentKeg.brand}}</em></p>
       <p><strong>Flavor:</strong> {{currentKeg.flavor}}</p>
@@ -45,4 +45,5 @@ export class KegListComponent {
   sellButtonHasBeenClicked(kegToSell: Keg) {
     this.clickSell.emit(kegToSell);
   }
+
 }
