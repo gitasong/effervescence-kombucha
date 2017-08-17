@@ -48,11 +48,11 @@ export class KegListComponent {
 
   priceColor(currentKeg){
     if (currentKeg.price < 4.00){
-      return "bg-danger";
+      return "bg-success";
     } else if (currentKeg.price === 4.00) {
       return  "bg-warning";
     } else {
-      return "bg-info";
+      return "bg-danger";
     }
   }
 }
