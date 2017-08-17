@@ -22,6 +22,7 @@ import { Keg } from './keg.model';
       <button (click)="editButtonHasBeenClicked(currentKeg)">Edit!</button>
       <button (click)="sellButtonHasBeenClicked(currentKeg)">Sell Pint!</button>
       <button (click)="sellGrowlerHasBeenClicked(currentKeg)">Sell Growler!</button>
+      <button (click)="sellLargeHasBeenClicked(currentKeg)">Sell Large Growler!</button>
     </li>
   </ul>
   `
