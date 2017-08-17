@@ -46,4 +46,13 @@ export class KegListComponent {
     this.clickSell.emit(kegToSell);
   }
 
+  priceColor(currentKeg){
+    if (currentKeg.price < 4.00){
+      return "bg-danger";
+    } else if (currentKeg.price === 4.00) {
+      return  "bg-warning";
+    } else {
+      return "bg-info";
+    }
+  }
 }
