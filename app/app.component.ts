@@ -6,7 +6,7 @@ import { Keg } from './keg.model';
   template: `
   <div class="container">
     <h1>Effervesence Kombucha</h1>
-    <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickSell)="sellPint($event)" (clickGrowler)="sellGrowler($event)" (clickLarge)="sellLarge($event)" [clickedKeg]="clickedKeg"></keg-list>
+    <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickSell)="sell($event)" [clickedKeg]="clickedKeg"></keg-list>
     <new-keg (newKegSender)="addKeg($event)"></new-keg>
     <edit-keg [selectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
   </div>
@@ -36,21 +36,22 @@ export class AppComponent {
     this.selectedKeg = null;
   }
 
-  sellPint(clickedKeg) {
-    clickedKeg.pints --;
-    console.log(clickedKeg.pints);
-    return clickedKeg;
-  }
-
-  sellGrowler(clickedKeg) {
-    clickedKeg.pints -= 2;
-    console.log(clickedKeg.pints);
-    return clickedKeg;
-  }
-
-  sellLarge(clickedKeg) {
-    clickedKeg.pints -= 4;
-    console.log(clickedKeg.pints);
-    return clickedKeg;
+  sell(args) {
+    console.log(args);
+    var keg = args[0];
+    var size = args[1];
+    if (size === "pint") {
+      keg.pints --;
+      console.log(keg.pints);
+      return keg;
+    } else if (size === "growler") {
+      keg.pints -= 2;
+      console.log(keg.pints);
+      return keg;
+    } else if (size === "largeGrowler") {
+      keg.pints -= 4;
+      console.log(keg.pints);
+      return keg;
+    }
   }
 }
