@@ -21,6 +21,7 @@ import { Keg } from './keg.model';
 
 export class KegListComponent {
   @Input() childKegList: Keg[];
+  @Input() clickedKeg: Keg;
   @Output() clickSender = new EventEmitter();
   @Output() clickSell = new EventEmitter();
 
