@@ -20,9 +20,12 @@ import { Keg } from './keg.model';
       <p><strong>Pints Remaining:</strong> {{currentKeg.pints}}</p>
       <h4><strong>Price:</strong> \${{currentKeg.price.toFixed(2)}}</h4>
       <button (click)="editButtonHasBeenClicked(currentKeg)">Edit!</button>
-      <button (click)="sellButtonHasBeenClicked(currentKeg)">Sell Pint!</button>
-      <button (click)="sellGrowlerHasBeenClicked(currentKeg)">Sell Growler!</button>
-      <button (click)="sellLargeHasBeenClicked(currentKeg)">Sell Large Growler!</button>
+
+      <select (change)="onChange($event.target.value)">
+        <option value="pint" (click)="sellButtonHasBeenClicked(currentKeg)" selected="selected">Sell Pint (16 oz.)</option>
+        <option value="growler" (click)="sellGrowlerHasBeenClicked(currentKeg)">Sell Growler (32 oz.)</option>
+        <option value="largeGrowler" (click)="sellLargeHasBeenClicked(currentKeg)">Sell Large Growler (64 oz.)</option>
+      </select>
     </li>
   </ul>
   `
