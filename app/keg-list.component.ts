@@ -13,6 +13,7 @@ import { Keg } from './keg.model';
       <p><strong>Pints Remaining:</strong> {{currentKeg.pints}}</p>
       <h4><strong>Price:</strong> \${{currentKeg.price.toFixed(2)}}</h4>
       <button (click)="editButtonHasBeenClicked(currentKeg)">Edit!</button>
+      <button (click)="sellButtonHasBeenClicked(currentKeg)">Sell Pint!</button>
     </li>
   </ul>
   `
