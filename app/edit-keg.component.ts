@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Keg } from './keg.model';
 
 @Component({
-  selector: 'edit-task',
+  selector: 'edit-keg',
   template: `
   <div>
       <div *ngIf="selectedKeg">
