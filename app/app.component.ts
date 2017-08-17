@@ -6,7 +6,7 @@ import { Keg } from './keg.model';
   template: `
   <div class="container">
     <h1>Effervesence Kombucha</h1>
-    <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></keg-list>
+    <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)" (clickSell)="sellPint($event)"></keg-list>
     <new-keg (newKegSender)="addKeg($event)"></new-keg>
     <edit-keg [selectedKeg]="selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
   </div>
