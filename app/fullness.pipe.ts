@@ -8,4 +8,24 @@ import {Keg} from './keg.model';
 
 export class FullnessPipe implements PipeTransform {
 
+  transform(input: Keg[], desiredFullness) {
+    var output: Keg[] = [];
+    if(desiredFullness === "lowKegs") {
+      for (var i = 0; i < input.length; i++) {
+        if (input[i].pints < 10) {
+          output.push(input[i]);
+        }
+      }
+      return output;
+    } else if (desiredFullness === "fullKegs") {
+      for (var i = 0; i < input.length; i++) {
+        if (input[i].pints >= 10) {
+          output.push(input[i]);
+        }
+      }
+      return output;
+    } else {
+      return input;
+    }
+  }
 }
