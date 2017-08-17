@@ -32,6 +32,8 @@ export class KegListComponent {
   @Output() clickSender = new EventEmitter();
   @Output() clickSell = new EventEmitter();
 
+  filterByFullness: string = "fullKegs";
+
   editButtonHasBeenClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
   }
