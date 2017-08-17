@@ -21,7 +21,8 @@ import { Keg } from './keg.model';
       </div>
     </div>
   `
+})
 
 export class EditKegComponent {
-  @Input() selectedTask: Task;
+  @Input() selectedKeg: Keg;
 }
