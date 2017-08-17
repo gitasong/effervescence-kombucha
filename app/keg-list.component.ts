@@ -34,6 +34,7 @@ export class KegListComponent {
   @Output() clickSender = new EventEmitter();
   @Output() clickSell = new EventEmitter();
   @Output() clickGrowler = new EventEmitter();
+  @Output() clickLarge = new EventEmitter();
 
   filterByFullness: string = "allKegs";
 
@@ -51,6 +52,10 @@ export class KegListComponent {
 
   sellGrowlerHasBeenClicked(kegToSell: Keg) {
     this.clickGrowler.emit(kegToSell);
+  }
+
+  sellLargeHasBeenClicked(kegToSell: Keg) {
+    this.clickLarge.emit(kegToSell);
   }
 
   priceColor(currentKeg){
